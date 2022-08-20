@@ -3,22 +3,26 @@ const questions = [
     "Qual o tamanho que você usa?",
     "Prefere renda, box ou fio dental?",
     "Bordada ou sem estampa?",
-];
+]
 
 const ask = (index = 0) => {
     process.stdout.write(questions[index] + '\n');
-};
+}
 
 ask();
+
+process.on('exit',()=>{
+    console.log("Maneiro cara, você tem um bom gosto :)");
+})
 
 const answers = [];
 
 process.stdin.on("data", data => {
     answers.push(data.toString().trim())
     if(answers.length < questions.length){
-        ask(answers.length)
+        ask(answers.length);
     } else {
-        console.log(answers)
+        console.log(answers);
         process.exit();
     }
 })
