@@ -12,4 +12,4 @@ app.get("/sobre", function(req, res){
 })
 
 app.listen(666);
-console.log("Goodbye World");
+console.log("Running");
