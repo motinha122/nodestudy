@@ -18,8 +18,11 @@ app.get("/", function(req, res){
             message: "Muitos códigos quebrados"
         },
     ];
+
+    const subtitle = 'Linguagem das brabas pra quebrar códigos HTML';
     res.render("pages/index",{
         qualitys: items,
+        subtitle: subtitle,
     });
 })
 
