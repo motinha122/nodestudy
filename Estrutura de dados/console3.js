@@ -1,7 +1,5 @@
 // Queue FIFO
 
-const { fileLoader } = require("ejs");
-
 class Queue{
     constructor(){
         this.data = [];
