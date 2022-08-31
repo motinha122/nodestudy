@@ -14,7 +14,7 @@ class Atleta {
             this.categoria = 'juvenil';
         }
         else{
-            this.categoria = 'infantil';
+            this.categoria = 'adulto';
         }
     }
 }
