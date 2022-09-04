@@ -1,25 +1,10 @@
-function cubic(n) {
-    let counter = 0;
-    for (let i = 0 ; i < n ; i++){
-        for (let j = 0 ; j < n ;j++){
-            for (let k = 0 ; k < n ;k++){
-                counter++;
-            }
-        }
+function a(n){
+    let count = 0;
+    while(true){
+        count++;
     }
-    return counter;
-}
-console.log(cubic(4));
-
-function quadratic(n) {
-    let counter = 0;
-    for (let i = 0 ; i < n ; i++){
-        for (let j = 0 ; j < n ;j++){
-            counter++;
-        }
-    }
-    return counter;
+    return count;
 }
 
-console.log(quadratic(4));
+console.log(a(32));
 

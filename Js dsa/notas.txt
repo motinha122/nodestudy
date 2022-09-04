@@ -4,6 +4,21 @@ Big-O-Notation
 
 O(1) -> Constant time
 
+function constantFunction(n){
+    let total = 2;
+    return total;
+}
+
+O(log n) --> Logarithmic time
+
+function logarithmic(n){
+    let total = 0;
+    for(let i = 2 ; i <= n ; i = i*2){
+        total = i;
+    }
+    return total;
+}
+
 O(n) -> Linear time
 
 function linear(n){ 
@@ -38,5 +53,176 @@ function cubic(n) {
     return counter;
 }
 
-1. Find the fastest growing term
-2. Take out the coefficient 
+Rules of Big-O Notation
+
+Algorithm's complexity -> f(n) , n is inputs.
+
+- Coefficient rule: if f(n) is O(g(n)), then kf(n) is O(g(n)), for any const k > 0.
+    Eliminates coefficients that's not related to the input size.
+    Example: 5f(n) and f(n) have the same Big-O notation of O(f(n)).
+
+    function a(n){
+        let count = 0;
+        for (let i = 0; i < n ; i++){
+            count++;
+            }
+        return count;
+    }
+
+    f(n) = n
+
+    function b(n){
+        let count = 0;
+        for (let i = 0; i < (5*n) ; i++){
+            count++;
+        }
+        return count;
+    }
+
+    f(n) = 5n
+
+    function b(n){
+        let count = 0;
+        for (let i = 0; i < (5*n) ; i++){
+            count++;
+        }
+        count += 3;
+        return count;
+    }
+
+    f(n) = 5n + 1
+    
+- Sum rule: if f(n) is O(h(n)) and g(n) is O(p(n)), then f(n)+g(n) is O(h(n)+p(n)).
+
+    function a(n){
+        let count = 0;
+        for (let i = 0; i < n ; i++){
+            count++;
+        }
+        for (let j = 0; j < (5*n) ; j++){
+            count++;
+        }
+        return count;
+    }
+
+    f(n) = n + f(n) = 5n -> f(n) = 6n
+
+- Product rule: If f(n) is O(h(n)) and g(n) is O(p(n)), then f(n)g(n) is O(h(n)p(n)).
+
+    function a(n){
+        let count = 0;
+        for (let i = 0; i < n ; i++){ 
+            for (let j = 0; j < (5*n) ; j++){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    f(n) = 5n*n -> loop 5 times n times n -> 5n^2
+
+- Polynomial rule: If f(n) is a polynomial of degree k, then f(n) is O(n^k).
+
+    function a(n){
+        let count = 0;
+        for (let i = 0; i < n*n ; i++){
+            count++;    
+        }
+        return count;
+    }
+
+    f(n) = n^2
+
+- Transitive rule: If f(n) is O(g(n)) and g(n) is O(h(n)), then f(n) is O(h(n)).
+
+- Log of a power rule: og(nk) is O(log(n)) for any constant k > 0.
+
+> Take out the coefficient 
+> Sum rule
+> Product rule
+> Polynomial rule
+
+> Find the fastest growing term
+
+Exercise 1 :
+
+function a(n){
+    let count = 0;
+    for (let i = 0; i < n*1000 ; i++){
+        for (let j = 0; j < n*20 ; j++){
+            count++;    
+        }    
+    }
+    return count;
+}
+
+f(n) = 20n * 1000n = 20000n^2 -> O(n^2)
+
+
+Exercise 2 :
+
+function a(n){
+    let count = 0;
+    for (let i = 0; i < n ; i++){
+        for (let j = 0; j < n ; j++){
+            for (let k = 0; k < n ; k++){
+                for (let l = 0; l < 10 ; l++){
+                    count++;    
+                }   
+            } 
+        }    
+    }
+    return count;
+}
+
+f(n) = 10*n*n*n = 10(n^3) -> O(n^3)
+
+Exercise 3 :
+
+function a(n){
+    let count = 0;
+    for (let i = 0; i < 1000 ; i++){
+        count++;
+    }
+    return count;
+}
+
+f(n) = 1000 -> O(1)
+
+Exercise 4 :
+
+function a(n){
+    let count = 0;
+    for (let i = 0; i < n*10 ; i++){
+        count++;
+    }
+    return count;
+}
+
+f(n) = 10n -> O(n)
+
+Exercise 5 : 
+
+function a(n){
+    let count = 0;
+    for (let i = 1; i <= n ; i*=2){
+        count++;
+    }
+    return count;
+}
+
+f(n) = log2 n = O(log n)
+
+Exercise 6 : 
+
+function a(n){
+    let count = 0;
+    while(true){
+        count++;
+    }
+    return count;
+}
+
+f(n) = infinity -> O(infinity)
+
+
