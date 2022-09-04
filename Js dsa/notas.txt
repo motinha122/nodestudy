@@ -1,0 +1,41 @@
+Big-O-Notation
+
+> Measures the worst-case complexity of an algorithm
+
+O(1) -> Constant time
+
+O(n) -> Linear time
+
+function linear(n){ 
+    for (let i = 0 ; i < n ; i++){
+        console.log(i)
+    }
+}
+
+O(n^2) -> Quadratic time 
+
+function quadratic(n) {
+    for (let i = 0 ; i < n ; i++){
+        console.log(i);
+        for (let j = i ; j < n ;j++){
+            console.log(j);
+        }
+    }
+}
+
+O(n^2) -> Cubic time 
+
+function cubic(n) {
+    for (let i = 0 ; i < n ; i++){
+        console.log(i);
+        for (let j = i ; j < n ;j++){
+            console.log(j);
+                for (let k = j ; j < n ;j++){
+                console.log(k);
+            }
+        }
+    }
+}
+
+1. Find the fastest growing term
+2. Take out the coefficient 
