@@ -15,26 +15,27 @@ function linear(n){
 O(n^2) -> Quadratic time 
 
 function quadratic(n) {
+    let counter = 0;
     for (let i = 0 ; i < n ; i++){
-        console.log(i);
-        for (let j = i ; j < n ;j++){
-            console.log(j);
+        for (let j = 0 ; j < n ;j++){
+            counter++;
         }
     }
+    return counter;
 }
 
-O(n^2) -> Cubic time 
+O(n^3) -> Cubic time 
 
 function cubic(n) {
+    let counter = 0;
     for (let i = 0 ; i < n ; i++){
-        console.log(i);
-        for (let j = i ; j < n ;j++){
-            console.log(j);
-                for (let k = j ; j < n ;j++){
-                console.log(k);
+        for (let j = 0 ; j < n ;j++){
+            for (let k = 0 ; k < n ;k++){
+                counter++;
             }
         }
     }
+    return counter;
 }
 
 1. Find the fastest growing term
