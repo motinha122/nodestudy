@@ -1,0 +1,11 @@
+"dog".charAt(1) // "o"
+'YouTube'.substring(1,2) // 'o'
+'YouTube'.substring(3,7) // 'Tube'
+
+Substring return the characters between the specified indexes .substring(startIndex,endIndex)
+
+'YouTube'.substring(1) // 'ouTube' 
+
+returns all the characters from the specified value
+
+Number.EPSILON returns the smallest interval between two numbers
