@@ -1,0 +1,47 @@
+Any Numeric Characters
+
+let reg = /\d+/; 
+
+reg.test("123"); true
+reg.test("123a"); true
+reg.test("asadas"); false
+
+
+Only Numeric Characters 
+
+let reg = /^\d+$/;
+reg.test("123"); true
+reg.test("a"); false
+
+
+Floating Numeric Characters 
+
+let reg = /^[0-9]*.[0-9]*[1-9]+$/;
+
+reg.test("123"); false
+reg.test("12.3"); true
+
+
+Only Alphanumeric Characters 
+
+let reg = /[a-zA-Z0-9]/;
+
+reg.test("somethingElse"); true
+reg.test("hello"); true
+reg.test("112a"); true
+reg.test("^-^"); false
+
+
+Query String 
+
+http://your.domain/product.aspx?category=4&product_id=2140&query=lcd+tv
+SELECT LCD,TV FROM database WHERE category = 4 AND Product_id=2140;
+
+let uri = 'http://your.domain/product.aspx?category=4&product_id=2140&query=lcd+tv';
+
+let queryString = {};
+uri.replace(new RegExp("([^?=&]+)(=([^&]*))?","g"),function($0,$1,$2,$3){queryString[$1] = $3});
+console.log('ID:'+queryString['product_id']);
+console.log('Name:'+queryString['product_name']);
+console.log('Category:'+queryString['category']);
+

@@ -9,3 +9,6 @@ Substring return the characters between the specified indexes .substring(startIn
 returns all the characters from the specified value
 
 Number.EPSILON returns the smallest interval between two numbers
+
+let array1 = [1,2,3,4,5];
+array1.splice(1,2,[5,6,7]); returns [2,3], array1 = [1,[5,6,7],4]
