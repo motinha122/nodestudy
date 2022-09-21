@@ -8,7 +8,7 @@ class Stack {
     push(value){ //insere um valor no topo da pilha
         this.top++;
         this.data[this.top] = value;
-        return this.data
+        return this.data;
     }
     pop(){ //retira o valor do topo da pilha
         if(this.top <0) return undefined;

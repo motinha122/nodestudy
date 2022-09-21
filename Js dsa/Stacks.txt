@@ -1,0 +1,75 @@
+Stacks 
+
+/////////////////////////MAIN CODE//////////////////////////////
+
+let Stack = function(){
+    this.count = 0;   
+    this.storage = [];
+
+    this.push = function(value){
+        this.storage[this.count] = value;
+        this.count++;
+    }
+
+    this.pop = function(){
+        if(this.count === 0){
+            return undefined;
+        }
+
+        this.count--;
+        let result = this.storage[this.count];
+        delete this.storage[this.count];
+        return result;
+    }
+
+    this.size = function(){
+        return this.count;
+    }
+
+    this.peek = function(){
+        return this.storage[this.count-1];
+    }
+}
+
+let myStack = new Stack();
+
+//////////////////////////////////////////////////////////////////
+
+1. Creates a Stack function with a counter and an array to storage values
+
+    let Stack = function(){
+        this.count = 0;   
+        this.storage = [];
+    }
+
+2. Creates a function inside Stack that push the value inside the storage array
+    
+    this.push = function(value){
+        this.storage[this.count] = value;
+        this.count++;
+    }
+
+3. Creates a function that pops the last value of the storage array, if the counter isn't 0 and returns the value popped
+
+    this.pop = function(){
+        if(this.count === 0){
+            return undefined;
+        }
+
+        this.count--;
+        let result = this.storage[this.count];
+        delete this.storage[this.count];
+        return result;
+    }
+
+4. Creates a function that returns the size of the storage array
+
+    this.size = function(){
+        return this.count;
+    }
+
+5. Creates a function that returns the last element of the storage, without removing it
+
+    this.peek = function(){
+        return this.storage[this.count-1];
+    }
