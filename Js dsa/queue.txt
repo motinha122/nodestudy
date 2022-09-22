@@ -1,0 +1,77 @@
+Queue
+
+//////////////////////////////////////MAIN CODE////////////////////////////////////
+
+function Queue(){
+    let collection = [];
+    
+    this.print = function(){
+        console.log(collection);    
+    }
+
+    this.enqueue = function(element){
+        collection.push(element);
+    }
+
+    this.dequeue = function(){
+        return collection.shift();
+    }
+
+    this.front = function(){
+        return collection[0];
+    }
+
+    this.size = function(){
+        return collection.length;
+    }
+
+    this.isEmpty = function(){
+        return (collection.length === 0);
+    }
+}
+
+let q = new Queue();
+
+///////////////////////////////////////////////////////////////////////////////////
+
+1. Creates a function with an array collection
+
+    function Queue(){
+        let collection = [];
+    }
+
+2. Prints the collection
+
+    this.print = function(){
+        console.log(collection);    
+    }
+
+3. Enqueue an element in the array 
+
+    this.enqueue = function(element){
+        collection.push(element);
+    }
+
+4. Dequeue the element of the collection , removeing it from the first array element
+
+    this.dequeue = function(){
+        return collection.shift();
+    }
+
+5. Returns the first element of the array
+
+    this.front = function(){
+        return collection[0];
+    }
+
+6. Returns the size of the collection array 
+
+    this.size = function(){
+        return collection.length;
+    }
+
+7. Returns if the collection array is empty
+
+    this.isEmpty = function(){
+        return (collection.length === 0);
+    }

@@ -40,7 +40,7 @@ function mySet(){
         secondSet.forEach(function(e){
             unionSet.add(e);    
         })
-        return unionSet;
+        return unionSet.values();
     }
 
     this.intersection = function(otherSet){
@@ -51,7 +51,7 @@ function mySet(){
                 intersectionSet.add(e);
             }
         })
-        return intersectionSet;
+        return intersectionSet.values();
     }
 
     this.difference = function(otherSet){
@@ -62,7 +62,7 @@ function mySet(){
                 differenceSet.add(e);
             }
         })
-        return differenceSet;
+        return differenceSet.values();
     }
 
     this.subset = function(otherSet){
@@ -83,3 +83,7 @@ setB.add("c");
 setB.add("d");
 console.log(setA.values());
 console.log(setB.values());
+console.log(setA.intersection(setB));
+console.log(setA.subset(setB));
+console.log(setA.union(setB));
+console.log(setB.difference(setA));

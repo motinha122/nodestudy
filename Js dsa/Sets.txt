@@ -2,3 +2,168 @@ Sets
 
 /////////////////////////MAIN CODE//////////////////////////////
 
+function mySet(){
+    let collection = [];
+    
+    this.has = function(element){
+        return(collection.indexOf(element) !== -1);
+    }
+
+    this.values = function(){
+        return collection;
+    }
+
+    this.add = function(element){
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    }
+
+    this.remove = function(element){
+        if(this.has(element)){
+            index = collection.indexOf(element);
+            collection.splice(index,1);
+            return true;
+        }
+        return false;
+    }
+
+    this.size = function(){
+        return collection.length;
+    }
+
+    this.union = function(otherSet){
+        let unionSet = new mySet();
+        let firstSet = this.values();
+        let secondSet = otherSet.values();
+        firstSet.forEach(function(e){
+            unionSet.add(e);    
+        })
+        secondSet.forEach(function(e){
+            unionSet.add(e);    
+        })
+        return unionSet.values();
+    }
+
+    this.intersection = function(otherSet){
+        let intersectionSet = new mySet();
+        let firstSet = this.values();
+        firstSet.forEach(function(e){
+            if(otherSet.has(e)){
+                intersectionSet.add(e);
+            }
+        })
+        return intersectionSet.values();
+    }
+
+    this.difference = function(otherSet){
+        let differenceSet = new mySet();
+        let firstSet = this.values();
+        firstSet.forEach(function(e){
+            if(!otherSet.has(e)){
+                differenceSet.add(e);
+            }
+        })
+        return differenceSet.values();
+    }
+
+    this.subset = function(otherSet){
+        let firstSet = this.values();
+        return firstSet.every(function(value){
+            return otherSet.has(value);
+        });
+    }
+}
+
+//////////////////////////////////////////////////////////////
+
+1. Creates a Set function thats store an array
+
+    function mySet(){
+        let collection = [];
+    }
+
+2. Creates a function that returns the array called collection
+
+    this.values = function(){
+        return collection;
+    }
+
+3. Creates a function that adds a element in the array if it doesn't exist there, returning true or false
+
+    this.add = function(element){
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    }
+
+4. Creates a function that removes an element of the array returning true or false
+
+    this.remove = function(element){
+        if(this.has(element)){
+            index = collection.indexOf(element);
+            collection.splice(index,1);
+            return true;
+        }
+        return false;
+    }
+
+5. Creates a function that returns the size of the array
+
+    this.size = function(){
+        return collection.length;
+    }
+
+6. Creates a function that calculate the union between 2 sets, storing then in an array and returning it values
+
+    this.union = function(otherSet){
+        let unionSet = new mySet();
+        let firstSet = this.values();
+        let secondSet = otherSet.values();
+        firstSet.forEach(function(e){
+            unionSet.add(e);    
+        })
+        secondSet.forEach(function(e){
+            unionSet.add(e);    
+        })
+        return unionSet.values();
+    }
+
+7. Creates a function that calculate the intersection between 2 sets, storing then in an array and returning it values
+
+    this.intersection = function(otherSet){
+        let intersectionSet = new mySet();
+        let firstSet = this.values();
+        firstSet.forEach(function(e){
+            if(otherSet.has(e)){
+                intersectionSet.add(e);
+            }
+        })
+        return intersectionSet.values();
+    }
+
+8. Creates a function that calculate the difference between 2 sets, storing then in an array and returning it values
+
+    this.difference = function(otherSet){
+        let differenceSet = new mySet();
+        let firstSet = this.values();
+        firstSet.forEach(function(e){
+            if(!otherSet.has(e)){
+                differenceSet.add(e);
+            }
+        })
+        return differenceSet.values();
+    }
+
+9. Creates a function that calculate if array A is subset of the array B and returns it values
+
+    this.subset = function(otherSet){
+        let firstSet = this.values();
+        return firstSet.every(function(value){
+            return otherSet.has(value);
+        });
+    }
