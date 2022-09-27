@@ -34,3 +34,4 @@ q.print();
 q.dequeue();
 q.front();
 q.print();
+console.log(q.isEmpty());
