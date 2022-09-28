@@ -1,18 +1,24 @@
 function BubbleSort(lista){
     let aux = 0;
     let iterations = 0;
-
+    let finished = false;
     for(i = lista.length; i > 0; i--){
+        finished = false;
         for(j = 0; j < (lista.length-1); j++){
             if(lista[j] > lista[j+1]){
                 aux = lista[j+1];
                 lista[j+1] = lista[j];
                 lista[j] = aux;
+                finished = true;
             }
             iterations++;
         }
+        if(!finished){
+            break;
+        }
     }
     console.log(iterations);
+    console.log("\n");
     return lista;
 }
 
