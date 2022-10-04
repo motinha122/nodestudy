@@ -58,6 +58,19 @@ class LinkedList {
             throw 'Index out of range';
         }
     }
+
+    index(elem){
+        let pointer = this.head;
+        let i = 0;
+        while(pointer !== null){
+            if(pointer.data == elem){
+                return i;
+            }
+            pointer = pointer.next;
+            i++;
+        }
+        throw 'Given element is not in list';
+    }
 }
 
 const lista1 = new LinkedList();
@@ -70,3 +83,4 @@ console.log(lista1.head);
 console.log(lista1.get(2));
 lista1.set(2,20);
 console.log(lista1.get(2));
+console.log(lista1.index(20));
