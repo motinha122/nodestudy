@@ -5,15 +5,14 @@ function SelectionSort(lista){
         for(let i = j; i < lista.length; i++){
             if(lista[i] < lista[minIndex]){
                 minIndex = i;
-                iterations++;
             }
+            iterations++;
         }
         if(lista[j] > lista[minIndex]){
             let aux = lista[j];
             lista[j] = lista[minIndex];
             lista[minIndex] = aux;
         }
-        iterations++;
     }
     console.log(iterations);
     return lista;

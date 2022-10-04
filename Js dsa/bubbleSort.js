@@ -1,27 +1,25 @@
 function BubbleSort(lista){
     let aux = 0;
     let iterations = 0;
-    let finished = false;
+    let finished = true;
     for(i = lista.length; i > 0; i--){
-        finished = false;
+        finished = true;
         for(j = 0; j < (lista.length-1); j++){
             if(lista[j] > lista[j+1]){
                 aux = lista[j+1];
                 lista[j+1] = lista[j];
                 lista[j] = aux;
-                finished = true;
+                finished = false;
             }
             iterations++;
         }
-        if(!finished){
+        if(finished){
             break;
         }
     }
     console.log(iterations);
-    console.log("\n");
     return lista;
 }
-
 
 let lista = [7,5,1,8,3];
 let lista1 = [117,90,69,69,8,6,5];
