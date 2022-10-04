@@ -1,13 +1,12 @@
-const pilotos = ['Senna','Prost','Schumacher','Hamilton'];
+function prime(number) {
+    if(number <= 1) return false;
+    if(number <= 3) return true;
+    if(number % 2 == 0 || number % 3 == 0) return false;
+    for (let i = 5 ; i*i <= number ; i+=6){
+        if (number % i == 0 || number % (i+2) == 0)
+            return false;
+    }
+    return true;
+}
 
-pilotos.push('Alonso');
-pilotos.pop();
-
-
-const senna = pilotos.find(piloto => piloto === 'Senna');
-
-console.log(senna);
-
-pilotos.splice(1,1); //remove 1 item na posição 1
-
-console.log(pilotos);
+console.log(prime(1000000016531))
