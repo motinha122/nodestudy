@@ -3,7 +3,6 @@ const pilotos = ['Senna','Prost','Schumacher','Hamilton'];
 pilotos.push('Alonso');
 pilotos.pop();
 
-
 const senna = pilotos.find(piloto => piloto === 'Senna');
 
 console.log(senna);
