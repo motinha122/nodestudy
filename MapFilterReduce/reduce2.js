@@ -9,9 +9,8 @@ const users = [
     {firstname:"Edoederson",lastname:"Matos",age:35},
 ];
 
+console.time('If e Else');
 const frequenciaIdade = users.reduce((acc,curr)=>{
-    console.log(acc);
-    console.log(curr);
     if(acc[curr.age]){
         acc[curr.age]++;
     }
@@ -19,6 +18,15 @@ const frequenciaIdade = users.reduce((acc,curr)=>{
         acc[curr.age] = 1;
     }
     return acc;
-},{})
-
+}, {})
+console.timeEnd('If e Else');
 console.log(frequenciaIdade);
+
+console.time('Ternário');
+const frequenciaIdade2 = users.reduce((freq, user) => {
+    freq[user.age] ? freq[user.age]++ : freq[user.age] = 1;
+    return freq;
+}, {})
+
+console.timeEnd('Ternário');
+console.log(frequenciaIdade2);
